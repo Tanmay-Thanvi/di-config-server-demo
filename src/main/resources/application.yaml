@@ -7,7 +7,7 @@ spring:
   cloud:
     config:
       server:
-        default-label: ${GIT_BRANCH:main}
+        default-label: ${GIT_BRANCH:master}
         composite:
           - type: git
             order: 0
