@@ -19,7 +19,6 @@ spring:
             search-paths:
               - common
               - services/{application}
-              - graphql/{application}
 
 management:
   endpoints:
