@@ -35,3 +35,5 @@ deepintent:
 
 server:
   port: 4000
+
+debug: false
