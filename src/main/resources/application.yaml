@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: di-config-server-demo
+  profiles:
+    active: composite
+
+  cloud:
+    config:
+      server:
+        default-label: ${GIT_BRANCH:main}
+        composite:
+          - type: git
+            order: 0
+            uri: ${GIT_REPO_URL:}
+            username: ${GIT_USERNAME:}
+            password: ${GIT_TOKEN:}
+            clone-on-start: true
+            default-label: ${GIT_BRANCH:main}
+            search-paths:
+              - common
+              - services/{application}
+              - graphql/{application}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env
+  endpoint:
+    health:
+      show-details: always
+
+deepintent:
+  config-server:
+    version: "1.0"
+
+server:
+  port: 4000
