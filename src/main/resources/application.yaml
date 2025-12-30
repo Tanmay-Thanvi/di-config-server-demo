@@ -15,7 +15,7 @@ spring:
             username: ${GIT_USERNAME:}
             password: ${GIT_TOKEN:}
             clone-on-start: true
-            default-label: ${GIT_BRANCH:main}
+            default-label: ${GIT_BRANCH:master}
             search-paths:
               - common
               - services/{application}
